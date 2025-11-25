@@ -1,7 +1,7 @@
-import LandingPage from './components/LandingPage';
+import AnalysisPage from './pages/AnalysisPage';
 
 function App() {
-  return <LandingPage />;
+  return <AnalysisPage />;
 }
 
 export default App;

@@ -19,8 +19,8 @@ const categories = {
   "digital": "Digital Services - Software and IoT solutions"
 };
 
-const createAnalysisPrompt = ({ products }: { products: product[] }) => {
-  return `You are a construction formwork expert assistant for Doka, one of the world's leading formwork and scaffolding companies. Doka provides temporary structures (formwork) that hold poured concrete in place until it cures and hardens.
+
+const DOKA_SYSTEM_PROMPT = `You are a construction formwork expert assistant for Doka, one of the world's leading formwork and scaffolding companies. Doka provides temporary structures (formwork) that hold poured concrete in place until it cures and hardens.
 
 Your role is to analyze construction drawings, sketches, blueprints, or site photos and recommend appropriate Doka formwork products based on what you see.
 
@@ -43,9 +43,10 @@ ANALYSIS GUIDELINES:
 6. Always recommend appropriate safety systems
 
 OUTPUT FORMAT:
-You must respond with valid JSON only. No markdown, no explanation outside the JSON.
+You must respond with valid JSON only. No markdown, no explanation outside the JSON.`;
 
-Analyze the attached construction image and recommend appropriate Doka formwork products.
+const createAnalysisPrompt = ({ products }: { products: product[] }) => {
+  return `Analyze the attached construction image and recommend appropriate Doka formwork products.
 
 AVAILABLE DOKA PRODUCTS as JSON:
 
@@ -60,7 +61,13 @@ TASK:
 3. Select appropriate products from the catalog above
 4. Explain why each product is recommended for this specific project
 
-RESPOND WITH THIS EXACT JSON STRUCTURE:
+IMPORTANT: If you cannot process the image or if the image is not related to construction/building, respond with this ERROR format instead:
+{
+  "error": "Unable to analyze image",
+  "reason": "Brief explanation of why (e.g., 'Image is not clear enough', 'Image does not show construction', 'Image format not supported', etc.)"
+}
+
+OTHERWISE, RESPOND WITH THIS EXACT JSON STRUCTURE:
 {
   "analysis": {
     "structureType": "string - e.g., 'Multi-story residential building', 'Commercial office tower', 'Bridge', etc.",
@@ -95,4 +102,4 @@ IMPORTANT RULES:
 - Be specific in your reasons - reference what you see in the image`;
 }
 
-export default createAnalysisPrompt;
+export { createAnalysisPrompt, DOKA_SYSTEM_PROMPT };
