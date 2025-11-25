@@ -7,6 +7,7 @@ export interface Product {
   category: string;
   handling: string;
   bestFor: string[];
+  link?: string;
 }
 
 export interface ProductForAnalysis {
@@ -19,6 +20,6 @@ export interface ProductForAnalysis {
 }
 
 export function toAnalysisProduct(product: Product): ProductForAnalysis {
-  const { imageUrl, system, ...rest } = product;
+  const { imageUrl, system, link, ...rest } = product;
   return rest;
 }

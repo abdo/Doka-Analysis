@@ -9,7 +9,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["large walls", "high-rise", "commercial buildings", "repetitive pours"]
+      "bestFor": [
+        "large walls",
+        "high-rise",
+        "commercial buildings",
+        "repetitive pours"
+      ]
     },
     {
       "id": "framax-xlife-plus",
@@ -19,7 +24,11 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["large walls", "fast cycling", "labor efficiency"]
+      "bestFor": [
+        "large walls",
+        "fast cycling",
+        "labor efficiency"
+      ]
     },
     {
       "id": "frami-xlife",
@@ -29,7 +38,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "manual",
-      "bestFor": ["foundations", "residential walls", "small columns", "sites without crane"]
+      "bestFor": [
+        "foundations",
+        "residential walls",
+        "small columns",
+        "sites without crane"
+      ]
     },
     {
       "id": "alu-framax-xlife",
@@ -39,7 +53,10 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "both",
-      "bestFor": ["medium to large walls", "mixed handling requirements"]
+      "bestFor": [
+        "medium to large walls",
+        "mixed handling requirements"
+      ]
     },
     {
       "id": "dokaxlight",
@@ -49,7 +66,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "manual",
-      "bestFor": ["residential", "renovation", "limited site access", "small crews"]
+      "bestFor": [
+        "residential",
+        "renovation",
+        "limited site access",
+        "small crews"
+      ]
     },
     {
       "id": "large-area-formwork-top-50",
@@ -59,7 +81,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["custom shapes", "non-standard dimensions", "architectural concrete"]
+      "bestFor": [
+        "custom shapes",
+        "non-standard dimensions",
+        "architectural concrete"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/timber-beam-formwork/large-area-formwork-top-50/index"
     },
     {
       "id": "wall-formwork-ff20",
@@ -69,7 +96,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["architectural concrete", "smooth finishes", "exposed walls"]
+      "bestFor": [
+        "architectural concrete",
+        "smooth finishes",
+        "exposed walls"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/timber-beam-formwork/wall-formwork-ff20/index"
     },
     {
       "id": "wall-formwork-ff100-tec",
@@ -79,7 +111,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["thick walls", "high concrete pressure", "infrastructure"]
+      "bestFor": [
+        "thick walls",
+        "high concrete pressure",
+        "infrastructure"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/timber-beam-formwork/wall-formwork-ff100-tec/index"
     },
     {
       "id": "circular-formwork-h20",
@@ -89,7 +126,13 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["curved walls", "circular structures", "tanks", "silos"]
+      "bestFor": [
+        "curved walls",
+        "circular structures",
+        "tanks",
+        "silos"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/timber-beam-formwork/circular-formwork-h20/index"
     },
     {
       "id": "supercurve",
@@ -99,7 +142,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "wall",
       "handling": "crane",
-      "bestFor": ["free-form shapes", "complex curves", "architectural landmarks"]
+      "bestFor": [
+        "free-form shapes",
+        "complex curves",
+        "architectural landmarks"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/framed-formwork/supercurve/index"
     },
     {
       "id": "column-formwork-top-50",
@@ -109,7 +157,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "column",
       "handling": "crane",
-      "bestFor": ["large columns", "custom column sizes", "commercial buildings"]
+      "bestFor": [
+        "large columns",
+        "custom column sizes",
+        "commercial buildings"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/column-formwork/top-50/index"
     },
     {
       "id": "column-formwork-rs",
@@ -119,7 +172,11 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "column",
       "handling": "crane",
-      "bestFor": ["round columns", "circular cross-sections"]
+      "bestFor": [
+        "round columns",
+        "circular cross-sections"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/column-formwork/rs/index"
     },
     {
       "id": "column-formwork-ks-xlife",
@@ -129,7 +186,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "column",
       "handling": "crane",
-      "bestFor": ["repetitive columns", "fast cycling", "parking structures"]
+      "bestFor": [
+        "repetitive columns",
+        "fast cycling",
+        "parking structures"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/column-formwork/ks-xlife/index"
     },
     {
       "id": "column-formwork-frami-xlife",
@@ -139,7 +201,12 @@ const dokaData =
       "system": "Wall Formwork",
       "category": "column",
       "handling": "manual",
-      "bestFor": ["small columns", "residential", "manual handling"]
+      "bestFor": [
+        "small columns",
+        "residential",
+        "manual handling"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-wall-systems/column-formwork/frami-xlife/index"
     },
     {
       "id": "dokaxdek",
@@ -149,7 +216,11 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "both",
-      "bestFor": ["modern buildings", "efficient slab construction", "flexible applications"]
+      "bestFor": [
+        "modern buildings",
+        "efficient slab construction",
+        "flexible applications"
+      ]
     },
     {
       "id": "dokaflex",
@@ -159,7 +230,13 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "manual",
-      "bestFor": ["standard floor slabs", "variable layouts", "residential", "commercial"]
+      "bestFor": [
+        "standard floor slabs",
+        "variable layouts",
+        "residential",
+        "commercial"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-floor-systems/timber-beam-floor-formwork/dokaflex/index"
     },
     {
       "id": "dokaflex-30-tec",
@@ -169,7 +246,11 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "manual",
-      "bestFor": ["cost-sensitive projects", "high reuse requirements"]
+      "bestFor": [
+        "cost-sensitive projects",
+        "high reuse requirements"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-floor-systems/timber-beam-floor-formwork/dokaflex-30-tec/index"
     },
     {
       "id": "dokadek-30",
@@ -179,7 +260,11 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "manual",
-      "bestFor": ["fast slab forming", "reduced labor", "commercial buildings"]
+      "bestFor": [
+        "fast slab forming",
+        "reduced labor",
+        "commercial buildings"
+      ]
     },
     {
       "id": "dokadek-20",
@@ -189,7 +274,11 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "manual",
-      "bestFor": ["residential buildings", "apartments", "smaller floor areas"]
+      "bestFor": [
+        "residential buildings",
+        "apartments",
+        "smaller floor areas"
+      ]
     },
     {
       "id": "dokamatic-table",
@@ -199,7 +288,12 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "crane",
-      "bestFor": ["high-rise buildings", "repetitive floors", "fast cycling"]
+      "bestFor": [
+        "high-rise buildings",
+        "repetitive floors",
+        "fast cycling"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-floor-systems/tableforms/dokamatic-table/index"
     },
     {
       "id": "dokaflex-table",
@@ -209,7 +303,11 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "crane",
-      "bestFor": ["multi-story buildings", "variable floor layouts"]
+      "bestFor": [
+        "multi-story buildings",
+        "variable floor layouts"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-floor-systems/tableforms/dokaflex-table/index"
     },
     {
       "id": "safeflex",
@@ -219,7 +317,12 @@ const dokaData =
       "system": "Floor Formwork",
       "category": "slab",
       "handling": "manual",
-      "bestFor": ["drop beams", "beam-and-slab structures", "precast combinations"]
+      "bestFor": [
+        "drop beams",
+        "beam-and-slab structures",
+        "precast combinations"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-floor-systems/timber-beam-floor-formwork/safeflex/index"
     },
     {
       "id": "xclimb-60-automatic",
@@ -229,7 +332,12 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "self-climbing",
-      "bestFor": ["high-rise cores", "tall structures", "crane-independent climbing"]
+      "bestFor": [
+        "high-rise cores",
+        "tall structures",
+        "crane-independent climbing"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/automatic-climbing-formwork/xclimb60/index"
     },
     {
       "id": "xclimb-60-guided",
@@ -239,7 +347,12 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "crane",
-      "bestFor": ["vertical walls", "precise alignment", "tall straight structures"]
+      "bestFor": [
+        "vertical walls",
+        "precise alignment",
+        "tall straight structures"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/crane-lifted-climbing-formwork/guided-climbing-formwork-xclimb60/index"
     },
     {
       "id": "ske-plus",
@@ -249,7 +362,12 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "self-climbing",
-      "bestFor": ["complex high-rises", "varying core shapes", "landmark buildings"]
+      "bestFor": [
+        "complex high-rises",
+        "varying core shapes",
+        "landmark buildings"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/automatic-climbing-formwork/automatic-climbing-formwork-ske-plus/index"
     },
     {
       "id": "climbing-formwork-mf240",
@@ -259,7 +377,12 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "crane",
-      "bestFor": ["varied wall shapes", "medium-height structures", "flexibility"]
+      "bestFor": [
+        "varied wall shapes",
+        "medium-height structures",
+        "flexibility"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/crane-lifted-climbing-formwork/climbing-formwork-mf240/index"
     },
     {
       "id": "platform-scp",
@@ -269,7 +392,12 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "self-climbing",
-      "bestFor": ["high-rise cores", "elevator shafts", "stair cores"]
+      "bestFor": [
+        "high-rise cores",
+        "elevator shafts",
+        "stair cores"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/automatic-climbing-formwork/platform-scp/index"
     },
     {
       "id": "climbing-formwork-k",
@@ -279,7 +407,11 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "crane",
-      "bestFor": ["medium-height walls", "cost-effective climbing"]
+      "bestFor": [
+        "medium-height walls",
+        "cost-effective climbing"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/crane-lifted-climbing-formwork/climbing-formwork-k/index"
     },
     {
       "id": "shaft-platform",
@@ -289,7 +421,12 @@ const dokaData =
       "system": "Climbing Formwork",
       "category": "climbing",
       "handling": "crane",
-      "bestFor": ["elevator shafts", "stairwell cores", "interior shafts"]
+      "bestFor": [
+        "elevator shafts",
+        "stairwell cores",
+        "interior shafts"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-climbing-systems/crane-lifted-climbing-formwork/shaft-platform/index"
     },
     {
       "id": "staxo-100",
@@ -299,7 +436,13 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "crane",
-      "bestFor": ["bridges", "heavy loads", "large shoring heights", "industrial"]
+      "bestFor": [
+        "bridges",
+        "heavy loads",
+        "large shoring heights",
+        "industrial"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/shoring-towers/load-bearing-tower-staxo-100/index"
     },
     {
       "id": "staxo-40",
@@ -309,7 +452,12 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "manual",
-      "bestFor": ["building construction", "standard loads", "commercial slabs"]
+      "bestFor": [
+        "building construction",
+        "standard loads",
+        "commercial slabs"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/shoring-towers/load-bearing-tower-staxo-40/index"
     },
     {
       "id": "dokaxshore",
@@ -319,7 +467,12 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "manual",
-      "bestFor": ["efficient assembly", "flexible geometry", "modern projects"]
+      "bestFor": [
+        "efficient assembly",
+        "flexible geometry",
+        "modern projects"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/shoring-towers/dokaxshore/index"
     },
     {
       "id": "load-bearing-tower-d3",
@@ -329,7 +482,12 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "manual",
-      "bestFor": ["cost-effective shoring", "standard applications", "versatile use"]
+      "bestFor": [
+        "cost-effective shoring",
+        "standard applications",
+        "versatile use"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/shoring-towers/load-bearing-tower-d3/index"
     },
     {
       "id": "dokashore",
@@ -339,7 +497,12 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "crane",
-      "bestFor": ["very heavy loads", "bridge falsework", "transfer structures"]
+      "bestFor": [
+        "very heavy loads",
+        "bridge falsework",
+        "transfer structures"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/shoring-towers/heavy-duty-supporting-system-dokashore/index"
     },
     {
       "id": "doka-unikit",
@@ -349,7 +512,13 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "crane",
-      "bestFor": ["bridges", "tunnels", "infrastructure", "custom engineering"]
+      "bestFor": [
+        "bridges",
+        "tunnels",
+        "infrastructure",
+        "custom engineering"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/shoring-towers/uniKit/index"
     },
     {
       "id": "sl-1",
@@ -359,7 +528,12 @@ const dokaData =
       "system": "Shoring Systems",
       "category": "shoring",
       "handling": "crane",
-      "bestFor": ["tunnels", "major infrastructure", "civil engineering"]
+      "bestFor": [
+        "tunnels",
+        "major infrastructure",
+        "civil engineering"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-load-bearing-systems/tunnel-formwork/heavy-duty-supporting-system-sl-1/index"
     },
     {
       "id": "floor-props",
@@ -369,7 +543,12 @@ const dokaData =
       "system": "System Components",
       "category": "components",
       "handling": "manual",
-      "bestFor": ["slab support", "reshoring", "all floor formwork"]
+      "bestFor": [
+        "slab support",
+        "reshoring",
+        "all floor formwork"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-system-components/floor-props/index"
     },
     {
       "id": "formwork-beams",
@@ -379,7 +558,12 @@ const dokaData =
       "system": "System Components",
       "category": "components",
       "handling": "manual",
-      "bestFor": ["slab formwork", "custom configurations", "all beam-based systems"]
+      "bestFor": [
+        "slab formwork",
+        "custom configurations",
+        "all beam-based systems"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-system-components/timber-formwork-beams/index"
     },
     {
       "id": "edge-protection-xp",
@@ -389,7 +573,12 @@ const dokaData =
       "system": "Safety Systems",
       "category": "safety",
       "handling": "manual",
-      "bestFor": ["slab edges", "fall protection", "all elevated work"]
+      "bestFor": [
+        "slab edges",
+        "fall protection",
+        "all elevated work"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-safety-systems/guardrail-systems/edge-protection-system-XP/index"
     },
     {
       "id": "xsafe-edge-protection-z",
@@ -399,7 +588,12 @@ const dokaData =
       "system": "Safety Systems",
       "category": "safety",
       "handling": "manual",
-      "bestFor": ["perimeter protection", "floor openings", "efficient installation"]
+      "bestFor": [
+        "perimeter protection",
+        "floor openings",
+        "efficient installation"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-safety-systems/guardrail-systems/xsafe-edge-protection-Z/index"
     },
     {
       "id": "xsafe-plus",
@@ -409,7 +603,12 @@ const dokaData =
       "system": "Safety Systems",
       "category": "safety",
       "handling": "crane",
-      "bestFor": ["wall formwork access", "working at height", "integrated safety"]
+      "bestFor": [
+        "wall formwork access",
+        "working at height",
+        "integrated safety"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-safety-systems/working-and-protection-platforms/platform-system-xsafe-plus/index"
     },
     {
       "id": "stair-tower-250",
@@ -419,7 +618,12 @@ const dokaData =
       "system": "Safety Systems",
       "category": "safety",
       "handling": "manual",
-      "bestFor": ["site access", "multi-story buildings", "vertical circulation"]
+      "bestFor": [
+        "site access",
+        "multi-story buildings",
+        "vertical circulation"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-safety-systems/access-systems/stairtower250/index"
     },
     {
       "id": "folding-platform-k",
@@ -429,7 +633,12 @@ const dokaData =
       "system": "Safety Systems",
       "category": "safety",
       "handling": "crane",
-      "bestFor": ["wall forming access", "quick setup", "reusable platforms"]
+      "bestFor": [
+        "wall forming access",
+        "quick setup",
+        "reusable platforms"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-safety-systems/working-and-protection-platforms/folding-platform-k/index"
     },
     {
       "id": "protection-screen-xclimb-60",
@@ -439,7 +648,12 @@ const dokaData =
       "system": "Safety Systems",
       "category": "safety",
       "handling": "self-climbing",
-      "bestFor": ["high-rise buildings", "weather protection", "urban sites"]
+      "bestFor": [
+        "high-rise buildings",
+        "weather protection",
+        "urban sites"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-safety-systems/protection-screens/xclimb-60/index"
     },
     {
       "id": "concremote",
@@ -449,7 +663,12 @@ const dokaData =
       "system": "Digital Services",
       "category": "digital",
       "handling": "n/a",
-      "bestFor": ["concrete monitoring", "optimized stripping", "quality control"]
+      "bestFor": [
+        "concrete monitoring",
+        "optimized stripping",
+        "quality control"
+      ],
+      "link": "https://www.doka.com/en/system-groups/doka-system-components/concremote-hardware/index"
     },
     {
       "id": "mydoka",
@@ -459,7 +678,12 @@ const dokaData =
       "system": "Digital Services",
       "category": "digital",
       "handling": "n/a",
-      "bestFor": ["project management", "material tracking", "documentation"]
+      "bestFor": [
+        "project management",
+        "material tracking",
+        "documentation"
+      ],
+      "link": "https://www.doka.com/en/solutions/services/mydoka-customer-portal/myDoka-customer-portal"
     }
   ]
 }
