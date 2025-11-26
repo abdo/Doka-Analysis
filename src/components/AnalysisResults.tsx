@@ -5,10 +5,11 @@ import dokaData from '../constants/doka-data';
 
 interface AnalysisResultsProps {
   analysis: AnalysisResponse;
+  imageUrl?: string;
   onAnalyzeAnother: () => void;
 }
 
-const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, onAnalyzeAnother }) => {
+const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, onAnalyzeAnother }) => {
   // Get full product details for recommendations
   const getProduct = (id: string): Product | undefined => {
     return dokaData.products.find((p) => p.id === id);
@@ -41,25 +42,44 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, onAnalyzeAn
         <p className="text-gray-600">AI-powered formwork recommendations for your project</p>
       </div>
 
-      {/* Structure Analysis */}
-      <div className="bg-gradient-to-br from-doka-blue to-blue-700 rounded-2xl p-8 text-white shadow-xl">
-        <h3 className="text-2xl font-bold mb-4">Project Overview</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <p className="text-blue-200 text-sm font-semibold mb-1">Structure Type</p>
-            <p className="text-lg">{analysis.analysis.structureType}</p>
+      {/* Structure Analysis & Image */}
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* Analyzed Image */}
+        {imageUrl && (
+          <div className="lg:w-1/3 flex-shrink-0">
+            <div className="bg-white rounded-2xl p-4 shadow-xl border-4 border-doka-yellow h-full">
+              <h3 className="text-lg font-bold text-doka-blue mb-3 text-center">Analyzed Image</h3>
+              <div className="rounded-xl overflow-hidden border-2 border-gray-200 shadow-md">
+                <img
+                  src={imageUrl}
+                  alt="Analyzed construction project"
+                  className="w-full h-auto object-contain bg-gray-50"
+                />
+              </div>
+            </div>
           </div>
-          <div>
-            <p className="text-blue-200 text-sm font-semibold mb-1">Estimated Scale</p>
-            <p className="text-lg">{analysis.analysis.estimatedScale}</p>
-          </div>
-          <div className="md:col-span-2">
-            <p className="text-blue-200 text-sm font-semibold mb-1">Description</p>
-            <p className="text-lg">{analysis.analysis.description}</p>
-          </div>
-          <div className="md:col-span-2">
-            <p className="text-blue-200 text-sm font-semibold mb-1">Site Constraints</p>
-            <p className="text-lg">{analysis.analysis.siteConstraints}</p>
+        )}
+
+        {/* Project Overview */}
+        <div className={`bg-gradient-to-br from-doka-blue to-blue-700 rounded-2xl p-8 text-white shadow-xl ${imageUrl ? 'lg:w-2/3' : 'w-full'}`}>
+          <h3 className="text-2xl font-bold mb-4">Project Overview</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-blue-200 text-sm font-semibold mb-1">Structure Type</p>
+              <p className="text-lg">{analysis.analysis.structureType}</p>
+            </div>
+            <div>
+              <p className="text-blue-200 text-sm font-semibold mb-1">Estimated Scale</p>
+              <p className="text-lg">{analysis.analysis.estimatedScale}</p>
+            </div>
+            <div className="md:col-span-2">
+              <p className="text-blue-200 text-sm font-semibold mb-1">Description</p>
+              <p className="text-lg">{analysis.analysis.description}</p>
+            </div>
+            <div className="md:col-span-2">
+              <p className="text-blue-200 text-sm font-semibold mb-1">Site Constraints</p>
+              <p className="text-lg">{analysis.analysis.siteConstraints}</p>
+            </div>
           </div>
         </div>
       </div>

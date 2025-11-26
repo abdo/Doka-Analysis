@@ -10,6 +10,7 @@ type AppState = 'upload' | 'analyzing' | 'results' | 'error';
 const AnalysisPage: React.FC = () => {
   const [state, setState] = useState<AppState>('upload');
   const [analysis, setAnalysis] = useState<AnalysisResponse | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const handleImageSelect = async (file: File) => {
@@ -17,6 +18,10 @@ const AnalysisPage: React.FC = () => {
     setError(null);
 
     try {
+      // Create a URL for the uploaded image
+      const url = URL.createObjectURL(file);
+      setImageUrl(url);
+      
       const result = await analyzeImage(file);
       setAnalysis(result);
       setState('results');
@@ -30,6 +35,12 @@ const AnalysisPage: React.FC = () => {
     setState('upload');
     setAnalysis(null);
     setError(null);
+    
+    // Clean up the object URL
+    if (imageUrl) {
+      URL.revokeObjectURL(imageUrl);
+      setImageUrl(null);
+    }
   };
 
   return (
@@ -122,7 +133,7 @@ const AnalysisPage: React.FC = () => {
         {state === 'analyzing' && <LoadingSpinner />}
 
         {state === 'results' && analysis && (
-          <AnalysisResults analysis={analysis} onAnalyzeAnother={handleAnalyzeAnother} />
+          <AnalysisResults analysis={analysis} imageUrl={imageUrl || undefined} onAnalyzeAnother={handleAnalyzeAnother} />
         )}
 
         {state === 'error' && (

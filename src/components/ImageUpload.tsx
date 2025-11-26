@@ -71,10 +71,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
     <div className="max-w-2xl mx-auto">
       {!preview ? (
         <div
-          className={`relative border-4 border-dashed rounded-2xl p-12 text-center transition-all duration-300 ${
+          className={`relative border-4 border-dashed rounded-2xl p-12 text-center transition-all duration-300 backdrop-blur-sm shadow-xl ${
             dragActive
-              ? 'border-doka-yellow bg-yellow-50'
-              : 'border-gray-300 hover:border-doka-blue hover:bg-gray-50'
+              ? 'border-doka-yellow bg-yellow-50/90'
+              : 'border-white/50 hover:border-doka-yellow bg-white/90 hover:bg-white/95'
           }`}
           onDragEnter={handleDrag}
           onDragLeave={handleDrag}
@@ -127,24 +127,24 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
         </div>
       ) : (
         <div className="space-y-4">
-          <div className="relative rounded-2xl overflow-hidden border-4 border-doka-yellow shadow-xl">
+          <div className="relative rounded-2xl overflow-hidden border-4 border-doka-yellow shadow-2xl backdrop-blur-sm">
             <img
               src={preview}
               alt="Preview"
-              className="w-full h-auto max-h-96 object-contain bg-gray-100"
+              className="w-full h-auto max-h-96 object-contain bg-white/95"
             />
           </div>
 
           <div className="flex gap-4 justify-center">
             <button
               onClick={handleReset}
-              className="bg-gray-500 hover:bg-gray-600 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-200"
+              className="bg-gray-600 hover:bg-gray-700 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg"
             >
               Choose Different Image
             </button>
             <button
               onClick={handleUploadClick}
-              className="bg-doka-blue hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-colors duration-200 flex items-center gap-2"
+              className="bg-doka-blue hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-lg"
             >
               <span>Analyze Image</span>
               <svg

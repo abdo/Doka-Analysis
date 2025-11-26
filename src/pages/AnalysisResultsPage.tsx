@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import AnalysisResults from '../components/AnalysisResults';
 import Header from '../components/Header';
@@ -8,14 +8,24 @@ const AnalysisResultsPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Get analysis data from navigation state
+  // Get analysis data and image URL from navigation state
   const analysis = location.state?.analysis as AnalysisResponse | undefined;
+  const imageUrl = location.state?.imageUrl as string | undefined;
 
   // If no analysis data, redirect to home
   if (!analysis) {
     navigate('/');
     return null;
   }
+
+  // Cleanup the object URL when component unmounts
+  useEffect(() => {
+    return () => {
+      if (imageUrl) {
+        URL.revokeObjectURL(imageUrl);
+      }
+    };
+  }, [imageUrl]);
 
   const handleAnalyzeAnother = () => {
     navigate('/');
@@ -27,7 +37,7 @@ const AnalysisResultsPage: React.FC = () => {
 
       {/* Main Content */}
       <main className="flex-grow container mx-auto px-6 py-12">
-        <AnalysisResults analysis={analysis} onAnalyzeAnother={handleAnalyzeAnother} />
+        <AnalysisResults analysis={analysis} imageUrl={imageUrl} onAnalyzeAnother={handleAnalyzeAnother} />
       </main>
 
       {/* Footer */}
