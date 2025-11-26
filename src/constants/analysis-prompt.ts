@@ -69,7 +69,7 @@ OTHERWISE, RESPOND WITH THIS EXACT JSON STRUCTURE:
 {
   "analysis": {
     "structureType": "string - e.g., 'Multi-story residential building', 'Commercial office tower', 'Bridge', etc.",
-    "description": "string - 2-3 sentence description of what you see in the image",
+    "description": "string - 2-3 sentence description directly describing the building/structure WITHOUT phrases like 'the image shows' or 'this image depicts'. Start directly with the description (e.g., 'Multi-story building with a complex grid structure, indicating commercial use. Features multiple floors with large open spaces.')",
     "estimatedScale": "string - e.g., 'Small (1-2 floors)', 'Medium (3-6 floors)', 'Large (7-15 floors)', 'High-rise (15+ floors)', 'Infrastructure'",
     "siteConstraints": "string - any observations about site access, crane availability, complexity"
   },

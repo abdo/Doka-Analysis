@@ -1,7 +1,7 @@
-import React from 'react';
-import type { AnalysisResponse, Priority } from '../types/analysis';
-import type { Product } from '../types/product';
-import dokaData from '../constants/doka-data';
+import React from "react";
+import type { AnalysisResponse, Priority } from "../types/analysis";
+import type { Product } from "../types/product";
+import dokaData from "../constants/doka-data";
 
 interface AnalysisResultsProps {
   analysis: AnalysisResponse;
@@ -9,7 +9,11 @@ interface AnalysisResultsProps {
   onAnalyzeAnother: () => void;
 }
 
-const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, onAnalyzeAnother }) => {
+const AnalysisResults: React.FC<AnalysisResultsProps> = ({
+  analysis,
+  imageUrl,
+  onAnalyzeAnother,
+}) => {
   // Get full product details for recommendations
   const getProduct = (id: string): Product | undefined => {
     return dokaData.products.find((p) => p.id === id);
@@ -17,29 +21,37 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, o
 
   // Group recommendations by priority
   const groupedRecommendations = {
-    essential: analysis.recommendations.filter((r) => r.priority === 'essential'),
-    recommended: analysis.recommendations.filter((r) => r.priority === 'recommended'),
-    optional: analysis.recommendations.filter((r) => r.priority === 'optional'),
+    essential: analysis.recommendations.filter(
+      (r) => r.priority === "essential"
+    ),
+    recommended: analysis.recommendations.filter(
+      (r) => r.priority === "recommended"
+    ),
+    optional: analysis.recommendations.filter((r) => r.priority === "optional"),
   };
 
   const priorityColors: Record<Priority, string> = {
-    essential: 'bg-red-100 text-red-800 border-red-300',
-    recommended: 'bg-blue-100 text-blue-800 border-blue-300',
-    optional: 'bg-gray-100 text-gray-800 border-gray-300',
+    essential: "bg-red-100 text-red-800 border-red-300",
+    recommended: "bg-blue-100 text-blue-800 border-blue-300",
+    optional: "bg-gray-100 text-gray-800 border-gray-300",
   };
 
   const priorityLabels: Record<Priority, string> = {
-    essential: 'Essential',
-    recommended: 'Recommended',
-    optional: 'Optional',
+    essential: "Essential",
+    recommended: "Recommended",
+    optional: "Optional",
   };
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-doka-blue mb-2">Analysis Results</h2>
-        <p className="text-gray-600">AI-powered formwork recommendations for your project</p>
+        <h2 className="text-4xl font-bold text-doka-blue mb-2">
+          Analysis Results
+        </h2>
+        <p className="text-gray-600">
+          AI-powered formwork recommendations for your project
+        </p>
       </div>
 
       {/* Structure Analysis & Image */}
@@ -48,7 +60,6 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, o
         {imageUrl && (
           <div className="lg:w-1/3 flex-shrink-0">
             <div className="bg-white rounded-2xl p-4 shadow-xl border-4 border-doka-yellow h-full">
-              <h3 className="text-lg font-bold text-doka-blue mb-3 text-center">Analyzed Image</h3>
               <div className="rounded-xl overflow-hidden border-2 border-gray-200 shadow-md">
                 <img
                   src={imageUrl}
@@ -61,23 +72,35 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, o
         )}
 
         {/* Project Overview */}
-        <div className={`bg-gradient-to-br from-doka-blue to-blue-700 rounded-2xl p-8 text-white shadow-xl ${imageUrl ? 'lg:w-2/3' : 'w-full'}`}>
+        <div
+          className={`bg-gradient-to-br from-doka-blue to-blue-700 rounded-2xl p-8 text-white shadow-xl ${
+            imageUrl ? "lg:w-2/3" : "w-full"
+          }`}
+        >
           <h3 className="text-2xl font-bold mb-4">Project Overview</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <p className="text-blue-200 text-sm font-semibold mb-1">Structure Type</p>
+              <p className="text-blue-200 text-sm font-semibold mb-1">
+                Structure Type
+              </p>
               <p className="text-lg">{analysis.analysis.structureType}</p>
             </div>
             <div>
-              <p className="text-blue-200 text-sm font-semibold mb-1">Estimated Scale</p>
+              <p className="text-blue-200 text-sm font-semibold mb-1">
+                Estimated Scale
+              </p>
               <p className="text-lg">{analysis.analysis.estimatedScale}</p>
             </div>
             <div className="md:col-span-2">
-              <p className="text-blue-200 text-sm font-semibold mb-1">Description</p>
+              <p className="text-blue-200 text-sm font-semibold mb-1">
+                Description
+              </p>
               <p className="text-lg">{analysis.analysis.description}</p>
             </div>
             <div className="md:col-span-2">
-              <p className="text-blue-200 text-sm font-semibold mb-1">Site Constraints</p>
+              <p className="text-blue-200 text-sm font-semibold mb-1">
+                Site Constraints
+              </p>
               <p className="text-lg">{analysis.analysis.siteConstraints}</p>
             </div>
           </div>
@@ -86,11 +109,18 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, o
 
       {/* Identified Elements */}
       <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200">
-        <h3 className="text-2xl font-bold text-doka-blue mb-4">Identified Elements</h3>
+        <h3 className="text-2xl font-bold text-doka-blue mb-4">
+          Identified Elements
+        </h3>
         <div className="grid md:grid-cols-2 gap-4">
           {analysis.identifiedElements.map((element, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <h4 className="font-bold text-doka-blue mb-2">{element.element}</h4>
+            <div
+              key={index}
+              className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+            >
+              <h4 className="font-bold text-doka-blue mb-2">
+                {element.element}
+              </h4>
               <p className="text-gray-700 text-sm">{element.details}</p>
             </div>
           ))}
@@ -103,89 +133,175 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, imageUrl, o
           Formwork Recommendations
         </h3>
 
-        {(['essential', 'recommended', 'optional'] as Priority[]).map((priority) => {
-          const recs = groupedRecommendations[priority];
-          if (recs.length === 0) return null;
+        {/* Chosen Formwork Products Overview */}
+        <div className="rounded-2xl p-6 border-2 border-doka-blue/30">
+          <h4 className="text-lg font-bold text-doka-blue mb-4">
+            Selected Products:
+          </h4>
+          <div className="flex flex-wrap items-center gap-3">
+            {analysis.recommendations.map((rec, index) => {
+              const product = getProduct(rec.id);
+              if (!product) return null;
 
-          return (
-            <div key={priority} className="relative">
-              <div className="flex items-center gap-4 mb-6">
-                <span className={`px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm ${priorityColors[priority]}`}>
-                  {priorityLabels[priority]}
-                </span>
-                <div className="h-px bg-gray-200 flex-grow"></div>
-              </div>
+              return (
+                <React.Fragment key={rec.id}>
+                  <span className="text-white font-bold text-base bg-gradient-to-r from-doka-blue to-blue-600 px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    {product.name}
+                  </span>
+                  {index < analysis.recommendations.length - 1 && (
+                    <span className="text-doka-yellow text-2xl font-bold">
+                      +
+                    </span>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        </div>
 
-              <div className="grid lg:grid-cols-2 gap-8">
-                {recs.map((rec) => {
-                  const product = getProduct(rec.id);
-                  if (!product) return null;
+        {(["essential", "recommended", "optional"] as Priority[]).map(
+          (priority) => {
+            const recs = groupedRecommendations[priority];
+            if (recs.length === 0) return null;
 
-                  return (
-                    <div
-                      key={rec.id}
-                      className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full"
-                    >
-                      {/* Image Header */}
-                      <div className="relative h-56 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                        <img
-                          src={product.imageUrl}
-                          alt={product.name}
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <div className="absolute bottom-4 left-4 z-20">
-                          <h5 className="text-2xl font-bold text-white mb-1">{product.name}</h5>
-                          <p className="text-white/90 text-sm font-medium bg-white/20 backdrop-blur-sm px-2 py-1 rounded inline-block">
-                            For: {rec.forElement}
-                          </p>
+            return (
+              <div key={priority} className="relative">
+                <div className="flex items-center gap-4 mb-6">
+                  <span
+                    className={`px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm ${priorityColors[priority]}`}
+                  >
+                    {priorityLabels[priority]}
+                  </span>
+                  <div className="h-px bg-gray-200 flex-grow"></div>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {recs.map((rec) => {
+                    const product = getProduct(rec.id);
+                    if (!product) return null;
+
+                    return (
+                      <div
+                        key={rec.id}
+                        onClick={() =>
+                          product.link && window.open(product.link, "_blank")
+                        }
+                        className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full ${
+                          product.link ? "cursor-pointer" : ""
+                        }`}
+                      >
+                        {/* Image Header */}
+                        <div className="relative h-56 overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                          {product.link && (
+                            <div className="absolute inset-0 bg-doka-blue/0 group-hover:bg-doka-blue/20 transition-colors duration-300 z-15 flex items-center justify-center">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 rounded-full p-3 shadow-lg">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  strokeWidth={2.5}
+                                  stroke="currentColor"
+                                  className="w-6 h-6 text-doka-blue"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          )}
+                          <img
+                            src={product.imageUrl}
+                            alt={product.name}
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute bottom-4 left-4 z-20">
+                            <h5 className="text-2xl font-bold text-white mb-1">
+                              {product.name}
+                            </h5>
+                            <p className="text-white/90 text-sm font-medium bg-white/20 backdrop-blur-sm px-2 py-1 rounded inline-block">
+                              For: {rec.forElement}
+                            </p>
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Content Body */}
-                      <div className="p-6 flex-grow flex flex-col">
-                        {/* Reason Box */}
-                        <div className="bg-slate-50 rounded-xl p-4 mb-4 border-l-4 border-doka-blue">
-                          <p className="text-gray-700 text-sm leading-relaxed">
-                            <span className="font-bold text-doka-blue block mb-1">Why this system?</span>
-                            {rec.reason}
+                        {/* Content Body */}
+                        <div className="p-6 flex-grow flex flex-col">
+                          {/* Reason Box */}
+                          <div className="bg-slate-50 rounded-xl p-4 mb-4 border-l-4 border-doka-blue">
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                              <span className="font-bold text-doka-blue block mb-1">
+                                Why this system?
+                              </span>
+                              {rec.reason}
+                            </p>
+                          </div>
+
+                          <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                            {product.description}
                           </p>
-                        </div>
 
-                        <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
-                          {product.description}
-                        </p>
+                          {/* Tags */}
+                          <div className="flex flex-wrap gap-2 mt-auto mb-4">
+                            {product.bestFor.slice(0, 3).map((feature, idx) => (
+                              <span
+                                key={idx}
+                                className="text-xs font-semibold bg-gray-100 text-gray-600 px-3 py-1.5 rounded-full border border-gray-200"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                            {product.bestFor.length > 3 && (
+                              <span className="text-xs font-semibold bg-gray-50 text-gray-400 px-3 py-1.5 rounded-full border border-gray-200">
+                                +{product.bestFor.length - 3} more
+                              </span>
+                            )}
+                          </div>
 
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-2 mt-auto">
-                          {product.bestFor.slice(0, 3).map((feature, idx) => (
-                            <span
-                              key={idx}
-                              className="text-xs font-semibold bg-gray-100 text-gray-600 px-3 py-1.5 rounded-full border border-gray-200"
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                          {product.bestFor.length > 3 && (
-                            <span className="text-xs font-semibold bg-gray-50 text-gray-400 px-3 py-1.5 rounded-full border border-gray-200">
-                              +{product.bestFor.length - 3} more
-                            </span>
+                          {/* View Product Link */}
+                          {product.link && (
+                            <div className="pt-4 border-t border-gray-200">
+                              <div className="flex items-center justify-center gap-2 text-doka-blue font-semibold group-hover:text-blue-700 transition-colors">
+                                <span className="text-sm">
+                                  View Product Details
+                                </span>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  strokeWidth={2}
+                                  stroke="currentColor"
+                                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
                           )}
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          }
+        )}
       </div>
 
       {/* Additional Notes */}
       {analysis.additionalNotes && (
         <div className="bg-amber-50 border-l-4 border-doka-yellow p-6 rounded-lg">
-          <h4 className="text-lg font-bold text-doka-blue mb-2">Additional Notes</h4>
+          <h4 className="text-lg font-bold text-doka-blue mb-2">
+            Additional Notes
+          </h4>
           <p className="text-gray-700">{analysis.additionalNotes}</p>
         </div>
       )}

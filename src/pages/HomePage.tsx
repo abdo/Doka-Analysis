@@ -103,7 +103,7 @@ const HomePage: React.FC = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">
-                  AI-Powered Formwork Analysis
+                  Formwork Analysis
                 </h2>
                 <p className="text-xl text-gray-100 max-w-2xl mx-auto drop-shadow-md">
                   Upload your construction drawings or site photos and get
