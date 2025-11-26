@@ -1,75 +1,73 @@
-# React + TypeScript + Vite
+# Doka Formwork Analysis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI tool that analyzes construction images and recommends Doka formwork products.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 + TypeScript
+- React Router
+- Tailwind CSS
+- OpenAI GPT-4o Vision API
 
-## React Compiler
+## Setup
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+**Prerequisites:**
 
-Note: This will impact Vite dev & build performances.
+- Node.js 18+
+- OpenAI API key
 
-## Expanding the ESLint configuration
+**Install:**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Environment variables:**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Create a `.env` file:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_OPENAI_API_KEY=your_openai_api_key_here
 ```
+
+Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys).
+
+**Run:**
+
+```bash
+npm run dev
+```
+
+App runs at `http://localhost:5173`
+
+## Build
+
+```bash
+npm run build
+```
+
+## Features
+
+- Analyzes construction images using AI
+- Recommends formwork from 46+ Doka products
+- Prioritized recommendations (Essential, Recommended, Optional)
+- Direct links to Doka product pages
+- Sample images included for testing
+
+## Project Structure
+
+```
+src/
+├── components/     # UI components
+├── pages/          # Page components
+├── services/       # OpenAI service
+├── constants/      # Product data & AI prompts
+└── types/          # TypeScript types
+```
+
+## Usage
+
+1. Upload a construction image or choose a sample
+2. AI analyzes the structure and identifies elements
+3. View prioritized product recommendations
+4. Click cards to learn more on Doka's website

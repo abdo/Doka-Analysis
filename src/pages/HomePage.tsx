@@ -287,8 +287,7 @@ const HomePage: React.FC = () => {
           <div className="container mx-auto px-6 text-center">
             <p className="text-blue-200">
               &copy; {new Date().getFullYear()}{" "}
-              <span className="font-semibold">Doka GmbH</span>. All rights
-              reserved.
+              <span className="font-semibold">Doka Analysis</span>
             </p>
           </div>
         </footer>
