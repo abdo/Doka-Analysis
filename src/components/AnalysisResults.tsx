@@ -77,24 +77,26 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, onAnalyzeAn
         </div>
       </div>
 
-      {/* Product Recommendations */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-bold text-doka-blue">Product Recommendations</h3>
+      {/* Formwork Recommendations */}
+      <div className="space-y-8">
+        <h3 className="text-3xl font-bold text-doka-blue border-l-8 border-doka-yellow pl-4">
+          Formwork Recommendations
+        </h3>
 
         {(['essential', 'recommended', 'optional'] as Priority[]).map((priority) => {
           const recs = groupedRecommendations[priority];
           if (recs.length === 0) return null;
 
           return (
-            <div key={priority}>
-              <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span className={`px-3 py-1 rounded-full text-sm border ${priorityColors[priority]}`}>
+            <div key={priority} className="relative">
+              <div className="flex items-center gap-4 mb-6">
+                <span className={`px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm ${priorityColors[priority]}`}>
                   {priorityLabels[priority]}
                 </span>
-                <span>({recs.length})</span>
-              </h4>
+                <div className="h-px bg-gray-200 flex-grow"></div>
+              </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid lg:grid-cols-2 gap-8">
                 {recs.map((rec) => {
                   const product = getProduct(rec.id);
                   if (!product) return null;
@@ -102,44 +104,53 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ analysis, onAnalyzeAn
                   return (
                     <div
                       key={rec.id}
-                      className="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                      className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full"
                     >
-                      <div className="relative h-48 bg-gray-100">
+                      {/* Image Header */}
+                      <div className="relative h-56 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                         <img
                           src={product.imageUrl}
                           alt={product.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                         />
-                        <div className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold border ${priorityColors[priority]}`}>
-                          {priorityLabels[priority]}
+                        <div className="absolute bottom-4 left-4 z-20">
+                          <h5 className="text-2xl font-bold text-white mb-1">{product.name}</h5>
+                          <p className="text-white/90 text-sm font-medium bg-white/20 backdrop-blur-sm px-2 py-1 rounded inline-block">
+                            For: {rec.forElement}
+                          </p>
                         </div>
                       </div>
 
-                      <div className="p-6">
-                        <h5 className="text-xl font-bold text-doka-blue mb-2">{product.name}</h5>
-                        
-                        <div className="mb-3">
-                          <p className="text-sm text-gray-500 font-semibold mb-1">For: {rec.forElement}</p>
-                        </div>
-
-                        <div className="bg-blue-50 border-l-4 border-doka-blue p-3 mb-4 rounded">
-                          <p className="text-sm text-gray-700">
-                            <span className="font-semibold text-doka-blue">Why: </span>
+                      {/* Content Body */}
+                      <div className="p-6 flex-grow flex flex-col">
+                        {/* Reason Box */}
+                        <div className="bg-slate-50 rounded-xl p-4 mb-4 border-l-4 border-doka-blue">
+                          <p className="text-gray-700 text-sm leading-relaxed">
+                            <span className="font-bold text-doka-blue block mb-1">Why this system?</span>
                             {rec.reason}
                           </p>
                         </div>
 
-                        <p className="text-sm text-gray-600 mb-4">{product.description}</p>
+                        <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                          {product.description}
+                        </p>
 
-                        <div className="flex flex-wrap gap-2">
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mt-auto">
                           {product.bestFor.slice(0, 3).map((feature, idx) => (
                             <span
                               key={idx}
-                              className="text-xs bg-doka-yellow text-doka-blue px-2 py-1 rounded-full font-medium"
+                              className="text-xs font-semibold bg-gray-100 text-gray-600 px-3 py-1.5 rounded-full border border-gray-200"
                             >
                               {feature}
                             </span>
                           ))}
+                          {product.bestFor.length > 3 && (
+                            <span className="text-xs font-semibold bg-gray-50 text-gray-400 px-3 py-1.5 rounded-full border border-gray-200">
+                              +{product.bestFor.length - 3} more
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
