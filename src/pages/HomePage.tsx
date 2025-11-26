@@ -14,12 +14,12 @@ import sample5 from "../assets/samples/5.webp";
 import sample6 from "../assets/samples/6.jpg";
 
 const sampleImages = [
-  { id: 1, src: sample1, name: "High-Rise Building" },
-  { id: 2, src: sample2, name: "Bridge Construction" },
-  { id: 3, src: sample3, name: "Residential Project" },
-  { id: 4, src: sample4, name: "Commercial Complex" },
-  { id: 5, src: sample5, name: "Infrastructure Work" },
-  { id: 6, src: sample6, name: "Structural Framework" },
+  { id: 1, src: sample1, name: "Residential Project" },
+  { id: 2, src: sample2, name: "Sketch" },
+  { id: 3, src: sample3, name: "Residential Infrastructure" },
+  { id: 4, src: sample5, name: "Sketch" },
+  { id: 5, src: sample4, name: "Bridge Construction" },
+  { id: 6, src: sample6, name: "Residential Project" },
 ];
 
 const HomePage: React.FC = () => {
