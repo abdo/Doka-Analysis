@@ -1,4 +1,3 @@
-
 type product = {
   id: string;
   name: string;
@@ -6,19 +5,18 @@ type product = {
   category: string;
   handling: string;
   bestFor: string[];
-}
-
-const categories = {
-  "wall": "Wall Formwork - For vertical concrete walls of all sizes",
-  "column": "Column Formwork - For structural concrete columns",
-  "slab": "Floor/Slab Formwork - For horizontal concrete floors and ceilings",
-  "climbing": "Climbing Formwork - For tall structures built in vertical stages",
-  "shoring": "Shoring Systems - Temporary support structures during construction",
-  "safety": "Safety Systems - Fall protection and site access equipment",
-  "components": "System Components - Basic elements used across multiple systems",
-  "digital": "Digital Services - Software and IoT solutions"
 };
 
+const categories = {
+  wall: "Wall Formwork - For vertical concrete walls of all sizes",
+  column: "Column Formwork - For structural concrete columns",
+  slab: "Floor/Slab Formwork - For horizontal concrete floors and ceilings",
+  climbing: "Climbing Formwork - For tall structures built in vertical stages",
+  shoring: "Shoring Systems - Temporary support structures during construction",
+  safety: "Safety Systems - Fall protection and site access equipment",
+  components: "System Components - Basic elements used across multiple systems",
+  digital: "Digital Services - Software and IoT solutions",
+};
 
 const DOKA_SYSTEM_PROMPT = `You are a construction formwork expert assistant for Doka, one of the world's leading formwork and scaffolding companies. Doka provides temporary structures (formwork) that hold poured concrete in place until it cures and hardens.
 
@@ -61,7 +59,7 @@ TASK:
 3. Select appropriate products from the catalog above
 4. Explain why each product is recommended for this specific project
 
-IMPORTANT: If you cannot process the image or if the image is not related to construction/building, respond with this ERROR format instead:
+IMPORTANT: If you cannot process the image or if the image is not related to construction or not a kind of building or a kind of construction we can analyze (house, bridge... etc), respond with this ERROR format instead:
 {
   "error": "Unable to analyze image",
   "reason": "Brief explanation of why (e.g., 'Image is not clear enough', 'Image does not show construction', 'Image format not supported', etc.)"
@@ -100,6 +98,6 @@ IMPORTANT RULES:
 - For high-rise (7+ floors), strongly consider climbing formwork for efficiency
 - Provide 4-8 product recommendations typically (more for complex projects)
 - Be specific in your reasons - reference what you see in the image`;
-}
+};
 
 export { createAnalysisPrompt, DOKA_SYSTEM_PROMPT };
