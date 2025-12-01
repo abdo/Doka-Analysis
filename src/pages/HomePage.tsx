@@ -112,7 +112,64 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
 
-              <ImageUpload onImageSelect={handleImageSelect} />
+              {/* Main Action Cards */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Image Upload Card */}
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-doka-blue mb-4 flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-8 h-8"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                        />
+                      </svg>
+                      Upload Construction Image
+                    </h3>
+                    <ImageUpload onImageSelect={handleImageSelect} />
+                  </div>
+                </div>
+
+                {/* Voice Conversation Card */}
+                <div
+                  onClick={() => navigate('/conversation')}
+                  className="bg-gradient-to-br from-doka-blue to-blue-700 rounded-2xl shadow-xl border-2 border-doka-yellow cursor-pointer hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group p-8 flex flex-col justify-center items-center text-center"
+                >
+                  <div className="text-doka-yellow mb-6">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-24 h-24 group-hover:scale-110 transition-transform mx-auto"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-3 group-hover:text-doka-yellow transition-colors">
+                    Talk to an Expert
+                  </h3>
+                  <p className="text-blue-100 text-lg mb-6">
+                    Have a voice conversation with our formwork specialist
+                  </p>
+                  <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold group-hover:bg-doka-yellow group-hover:text-doka-blue transition-all">
+                    Start Call →
+                  </div>
+                </div>
+              </div>
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-12">
